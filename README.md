@@ -1,6 +1,6 @@
 # Matrix-Calibration-Based Cascaded Channel Estimation for Reconfigurable Intelligent Surface Assisted Multiuser MIMO
 
-This is the simulation code for the following paper:
+This is the simulation package for the following paper:
 
 Hang Liu, Xiaojun Yuan, and Ying Jun Zhang. "Matrix-calibration-based cascaded channel estimation
 for reconfigurable intelligent surface assisted multiuser MIMO," IEEE Journal on Selected Areas in Communications, 2020, doi: 10.1109/JSAC.2020.3007057.
