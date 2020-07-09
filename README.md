@@ -19,6 +19,11 @@ This package is written on MATLAB 2014b. It includes the following scripts (Also
 * __main_Section_VI_A.m__:
 This script produces the data for the purple dashed curves in Fig. 5 for given noise power (tau_N); The results are MSE_G_simulation and MSE_S_simulation, which is also stored in DATA/SNR_*.mat, each point a file. To save the running time, here we only set 2 Monte Carlo trials for each data point. To fully recover the plots in Fig. 5, one can change libopt.trails (Line 21) to 5000.
 
+* __main_replica.m__:
+This script can produce the solid pruple curve in Fig. 5. Specifically, it provides an iterative algorithm to compute the asymptotic MSEs by computing the fixed-point of eq. (37). The result (MSE_G_ana and MSE_S_ana) are stored in DATA/VIA_Analytical.mat
+
+
+
 * __Model_Generation_Library/__: Scripts for generate system models
   * __A_GEN.m__: Generate a BS sampling basis with a unfirom sampling grid
   * __F_GEN.m__: Generate RIS basis with grids specified by the inputs
@@ -31,6 +36,9 @@ This script produces the data for the purple dashed curves in Fig. 5 for given n
   * __MessagePassing.m/MessagePassing_iteration.m__: Implementation of Algorithm 1 
   * __MPOpt.m__: Class that contains the algorithm control parameters
   * __EstimIn.m/EstimOut.m/SparseScaEstim.m/CAwgnEstimIn.m/CAwgnEstimOut.m__: Classes contain prior functions for input and output
+
+* __Replica_Library/replica_iteration.m__: Iterative algorithm for asymptotic MSE computation
+
 
 * Codes for replica analysis computation and simulations in Section VI-B: comming soon
 ## Referencing
