@@ -1,10 +1,11 @@
 % This script produces the data for the purple dashed curves in Fig. 5 for
 % given noise power (tau_N);
 % The results are MSE_G_simulation and MSE_S_simulation, which is also
-% stored in DATA/SNR_*.mat, each point a file;
-% To save the running time, here we only set 2 Monte Carlo trials for each data
-% point. To fully recover the plots in Fig. 5, one can change libopt.trails
-% to 5000;  
+% stored in DATA/VIA_Simulation.mat;
+% To save the running time, here we can set the number of Monte Carlo
+% trials as a small number.
+% To fully recover the plots in Fig. 5, one can change libopt.trails
+% to 5000;
 clear;
 clc;
 warning('off');
@@ -18,7 +19,7 @@ addpath([basePath 'Model_Generation_Library']);
 libopt=[];
 
 % change to 5000 for smooth result
-libopt.trails=2;    % number of monte carlo trials
+libopt.trails=5000;    % number of monte carlo trials
 
 
 
@@ -41,6 +42,7 @@ libopt.optiter=500; % I_max, maximum allowable number of algorithm 1
 
 
 % input noise power by user
+% For example: the range in Fig. 5 is -40:2:-20
 SNRlist=input('input the range of 1/tau_N (in the form of list)\n');
 
 
@@ -61,13 +63,14 @@ L2=libopt.L2;
 
 %system contains the realization of each Monte Carlo trail
 system=[];
+% store MSEs of G and S for each trial
+Final_G=zeros(length(SNRlist),libopt.trails);
+Final_S=zeros(length(SNRlist),libopt.trails);
+libopt.pathstr=[basePath 'DATA/VIA_Simulation.mat'];
 for t=1:length(SNRlist)
-    % store MSEs of G and S for each trial
-    Final_G=zeros(1,libopt.trails);
-    Final_S=zeros(1,libopt.trails);
     libopt.tau_N_inverse=SNRlist(t);
     %file name
-    libopt.pathstr=[basePath 'DATA/SNR_' num2str(libopt.tau_N_inverse) '.mat'];
+    
     fprintf('tau_N_inverse: %d\n',libopt.tau_N_inverse)
     %noise power
     system.nuw=10^(-libopt.tau_N_inverse/10);
@@ -112,21 +115,21 @@ for t=1:length(SNRlist)
         % Run Algorithm 1
         Fin_OPT=MessagePassing(system,libopt);
         % Compute MSEs
-        Final_G(i)=MSE_Compute(G,Fin_OPT.ghat);
-        Final_S(i)=MSE_Compute(S,Fin_OPT.shat);
+        Final_G(t,i)=MSE_Compute(G,Fin_OPT.ghat);
+        Final_S(t,i)=MSE_Compute(S,Fin_OPT.shat);
         
         % verbose print
         if mod(i,1)==0
-            fprintf('Updated:Su NMSE: %f, Sr NMSE: %f\n',10*log10(Final_G(i)),10*log10(Final_S(i)));
+            fprintf('Updated:Su NMSE: %f, Sr NMSE: %f\n',...
+                10*log10(Final_G(t,i)),10*log10(Final_S(t,i)));
         end
         
-        % Average MSEs
-        MSE_G_simulation=10*log10(mean(Final_G,2));
-        MSE_S_simulation=10*log10(mean(Final_S,2));
-        
-        % save the data
-        save(libopt.pathstr,'libopt','Final_G','Final_S','MSE_G_simulation','MSE_S_simulation')
         
     end
 end
+% Average MSEs
+MSE_G_simulation=10*log10(mean(Final_G,2));
+MSE_S_simulation=10*log10(mean(Final_S,2));
+% save the data
+save(libopt.pathstr,'libopt','Final_G','Final_S','MSE_G_simulation','MSE_S_simulation')
 
