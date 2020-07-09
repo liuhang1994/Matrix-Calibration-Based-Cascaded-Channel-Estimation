@@ -7,7 +7,7 @@ for reconfigurable intelligent surface assisted multiuser MIMO," IEEE Journal on
 
 The package, written on Matlab 2014b, reproduces the numerical results in the paper.
 
-___only codes for simulations in Section VI-A are available, the remaining codes will be uploaded soon___
+___Only codes for simulations in Section VI-A are available, the remaining codes will be uploaded soon___
 
 ## Abstract of Article:
 
@@ -32,7 +32,7 @@ This script produces the data for the purple dashed curves in Fig. 5 for given n
   * __MPOpt.m__: Class that contains the algorithm control parameters
   * __EstimIn.m/EstimOut.m/SparseScaEstim.m/CAwgnEstimIn.m/CAwgnEstimOut.m__: Classes contain prior functions for input and output
 
-
+* Codes for replica analysis computation and simulations in Section VI-B: comming soon
 ## Referencing
 
 If you in any way use this code for research that results in publications, please cite our original article listed above.
