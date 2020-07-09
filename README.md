@@ -7,7 +7,7 @@ for reconfigurable intelligent surface assisted multiuser MIMO," IEEE Journal on
 
 The package, written on Matlab 2014b, reproduces the numerical results in the paper.
 
-___only codes for simulations in Section VI-A is available, the remaining codes will be uploaded soon___
+___only codes for simulations in Section VI-A are available, the remaining codes will be uploaded soon___
 
 ## Abstract of Article:
 
@@ -16,7 +16,21 @@ ___only codes for simulations in Section VI-A is available, the remaining codes 
 ## How to Use
 This package is written on MATLAB 2014b. It includes the following scripts (Also see each file for further documentation):
 
+* __main_Section_VI_A.m__:
+This script produces the data for the purple dashed curves in Fig. 5 for given noise power (tau_N); The results are MSE_G_simulation and MSE_S_simulation, which is also stored in DATA/SNR_*.mat, each point a file. To save the running time, here we only set 2 Monte Carlo trials for each data point. To fully recover the plots in Fig. 5, one can change libopt.trails (Line 21) to 5000.
 
+* __Model_Generation_Library/__: Scripts for generate system models
+  * __A_GEN.m__: Generate a BS sampling basis with a unfirom sampling grid
+  * __F_GEN.m__: Generate RIS basis with grids specified by the inputs
+  * __S_GEN.m__: Generate a Bernouli complex Gaussian matrix with unit non-zero variance and specified sparsity
+  * __MSE_Compute.m__: Compute the MSE between the ground-truth and its estimate
+
+* __DATA/__: Store the numerical results with .mat format
+  
+* __MP_Library/__: Scripts for message passing updating
+  * __MessagePassing.m/MessagePassing_iteration.m__: Implementation of Algorithm 1 
+  * __MPOpt.m__: Class that contains the algorithm control parameters
+  * __EstimIn.m/EstimOut.m/SparseScaEstim.m/CAwgnEstimIn.m/CAwgnEstimOut.m__: Classes contain prior functions for input and output
 
 
 ## Referencing
