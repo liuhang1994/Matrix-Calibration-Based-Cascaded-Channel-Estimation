@@ -22,6 +22,7 @@ This script produces the data for the purple dashed curves in Fig. 5 for given n
 * __main_replica.m__:
 This script can produce the solid pruple curve in Fig. 5. Specifically, it provides an iterative algorithm to compute the asymptotic MSEs by computing the fixed-point of eq. (37). The result (MSE_G_ana and MSE_S_ana) are stored in DATA/VIA_Analytical.mat
 
+* __plot_Fig5.m__: Plot figure as in Fig. 5 based on .mat data files in DATA/.
 
 
 * __Model_Generation_Library/__: Scripts for generate system models
