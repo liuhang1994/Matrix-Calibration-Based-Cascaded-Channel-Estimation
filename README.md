@@ -40,7 +40,7 @@ This script can produce the solid pruple curve in Fig. 5. Specifically, it provi
 * __Replica_Library/replica_iteration.m__: Iterative algorithm for asymptotic MSE computation
 
 
-* Codes for replica analysis computation and simulations in Section VI-B: comming soon
+* Codes for simulations in Section VI-B: comming soon
 ## Referencing
 
 If you in any way use this code for research that results in publications, please cite our original article listed above.
