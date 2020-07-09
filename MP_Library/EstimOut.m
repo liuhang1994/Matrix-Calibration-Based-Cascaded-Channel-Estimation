@@ -1,5 +1,9 @@
 classdef EstimOut < hgsetget
-% EstimOut:  Base class for output function in the GAMP algorithm
+% This script is from GAMPMATLAB package.
+
+
+
+% EstimOut:  Base class for output function
 %
 % For the sum-product algorithm, the output estimation function is defined 
 % based on the output channel probability distribution p_{Y|Z}(y|z).  

@@ -1,4 +1,5 @@
 classdef CAwgnEstimIn < EstimIn
+    % This script is from GAMPMATLAB package
     % CAwgnEstimIn:  Circular AWGN scalar input estimation function
     
     properties

@@ -1,4 +1,6 @@
 classdef SparseScaEstim < EstimIn
+    % This script is from GAMPMATLAB package.
+    
     % SparseScaEstim:  Scalar estimator class with sparsity
     %
     % Let baseEstim be the estimator for a base random variable X1.

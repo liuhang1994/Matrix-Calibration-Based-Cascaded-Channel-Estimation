@@ -1,5 +1,7 @@
 classdef EstimIn < hgsetget
-    % EstimIn:  Base class for input function in the G-AMP algorithm
+    % This script is from GAMPMATLAB package.
+    
+    % EstimIn:  Base class for input function
     %
     % Given input variables X, the function computes estimates
     % of X from observations of the form R = X + V, V ~ N(0,rvar)

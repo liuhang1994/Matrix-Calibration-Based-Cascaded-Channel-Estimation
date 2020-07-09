@@ -1,13 +1,14 @@
 classdef MPOpt 
+% structure that contains the algorithm control parameters
     properties
         
         
-        %Number of iterations
+        %Maximum number of iterations
         nit = 1500;
-        %Minimum number of iterations- sometimes useful with warm starting
-        %approaches
+        %Minimum number of iterations
         nitMin = 0; %0 for no effect
-        %Specify a convergence tolerance.
+        
+        %Convergence tolerance.
         tol = 1e-4;
         
  
@@ -15,7 +16,6 @@ classdef MPOpt
         
         
         %***** Initialization
-       
         %Provide initializations for the inital variables
         shat0 = [];
         ghat0 = [];
@@ -72,12 +72,13 @@ classdef MPOpt
         %***** Variance Control
         %                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         
-        %Minimum variances. See code for details of use.
-        pvarMin = 1e-13;
-        SvarMin = 0;
-        XvarMin = 0;
-        WvarToPvarMax = 0.99;   % prevents negative svar, should be near 1
-        %Variance threshold for rvar and qvar, set large for no effect
+        %Variance lower bound. reset to this lower bound if the variance terms
+        %are too less
+        pvarMin = 1e-5;
+        SvarMin = 1e-5;
+        WvarToPvarMax = 0.99;   % prevents negative variance, should be near 1
+        
+        %Variance upper bound. Prevent variances to be too large
         varThresh = 1e6; 
     end
     

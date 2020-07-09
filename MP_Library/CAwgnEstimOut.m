@@ -1,4 +1,6 @@
 classdef CAwgnEstimOut < EstimOut
+    % This script is from GAMPMATLAB package.
+    
     % CAwgnEstimOut:  CAWGN scalar output estimation function
     %
     % Corresponds to an output channel of the form
