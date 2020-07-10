@@ -9,10 +9,6 @@ figure( 'Position', [20 20 600 500])
 a=subplot(1,2,1);
 a.Position=[0.1530 0.1200 0.3046 0.7650];
 
-Set1_Sr_Ana_cuv=fit(tau_N_inverse',MSE_S_ana','linearinterp');
-Set1_Sr_Simu_cuv=fit(tau_N_inverse',MSE_S_simulation,'linearinterp');
-Set1_Su_Ana_cuv=fit(tau_N_inverse',MSE_G_ana','linearinterp');
-Set1_Su_Simu_cuv=fit(tau_N_inverse',MSE_G_simulation,'linearinterp');
 
 p1=plot(tau_N_inverse(index),MSE_S_ana((index)),'-','Color',[0.5 0 0.5],'LineWidth',1.5,'MarkerSize',6);
 hold on
