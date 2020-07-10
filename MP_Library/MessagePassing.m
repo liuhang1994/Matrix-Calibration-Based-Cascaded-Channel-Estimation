@@ -7,7 +7,7 @@ function [estFin]= MessagePassing(system,libopt)
 
 
 
-%% intialization
+% intialization
 
 L_prime = libopt.L_prime;
 K = libopt.K;

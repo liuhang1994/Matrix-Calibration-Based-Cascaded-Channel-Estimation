@@ -2,7 +2,7 @@ function [estFin, optFin] = ...
     MessagePassing_iteration(P,X,H_0,A,gOut, gU, gR, opt)
 % Message passing iterations in Algorithm 1
 % Quantities are computed in a matrix form
-%% Setup
+% Setup
 
 % Get options
 nit     = opt.nit;              % number of iterations
@@ -32,7 +32,7 @@ pvarMin = opt.pvarMin;
 SvarMin = opt.SvarMin;
 %whether early stop occurs
 estFin.cov=false;
-%% Initialization
+% Initialization
 state = [];
 valIn = -inf;
 shat=  opt.shat0;
@@ -308,7 +308,7 @@ while ~stop
 end
 
 
-%% Save the final values
+% Save the final values
 %Save the options object that was used
 optFin = opt;
 %Estimates of the two matrix factors
