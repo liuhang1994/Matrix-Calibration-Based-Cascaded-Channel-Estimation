@@ -101,7 +101,7 @@ for t=1:length(SNRlist)
         % system.H_0=H_RB_bar*A_R;
         system.H_0=(randn(M,L_prime)+1j*randn(M,L_prime))/sqrt(2); %H_0 in eq.(10)
         % Note: distribution of H_0 has no significant influence on the
-        % final result, as long as it is full-rank and good-conditioning
+        % final result, as long as its entries are i.i.d.
         
         
         %received signal
