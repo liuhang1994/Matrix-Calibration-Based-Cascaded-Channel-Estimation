@@ -9,13 +9,13 @@
 clear;
 clc;
 warning('off');
-%% add script path
+% add script path 
 basePath = [fileparts(mfilename('fullpath')) filesep];
 addpath([basePath 'Replica_Library']);
 addpath([basePath 'MP_Library']);
 addpath([basePath 'Model_Generation_Library']);
 
-%% libopt contains system parameter that will be passed into message passing functions
+% libopt contains system parameter that will be passed into message passing functions 
 libopt=[];
 
 % change to 5000 for smooth result
