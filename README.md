@@ -17,7 +17,7 @@ ___Only codes for simulations in Section VI-A are available, the remaining codes
 This package is written on MATLAB 2014b. It includes the following scripts (Also see each file for further documentation):
 
 * __main_Section_VI_A.m__:
-This script produces the data for the purple dashed curves in Fig. 5 for given noise power (tau_N); The results are MSE_G_simulation and MSE_S_simulation, which is also stored in DATA/SNR_*.mat, each point a file. To save the running time, one can set the number of Monte Carlo trials to a small number. To fully recover the plots in Fig. 5, one can change libopt.trails (Line 22) to 5000.
+This script produces the data for the purple dashed curves in Fig. 5 for given noise power (tau_N); The results are MSE_G_simulation and MSE_S_simulation, which is also stored in DATA/VIA_Simulation.mat. To save the running time, one can set the number of Monte Carlo trials to a small number. To fully recover the plots in Fig. 5, one should set libopt.trails (Line 22) to 5000.
 
 * __main_replica.m__:
 This script can produce the solid pruple curve in Fig. 5. Specifically, it provides an iterative algorithm to compute the asymptotic MSEs by computing the fixed-point of eq. (37). The result (MSE_G_ana and MSE_S_ana) are stored in DATA/VIA_Analytical.mat.
