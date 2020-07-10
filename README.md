@@ -30,7 +30,7 @@ This script can produce the solid pruple curve in Fig. 5. Specifically, it provi
   * __F_GEN.m__: Generate RIS basis with grids specified by the inputs
   * __S_GEN.m__: Generate a Bernouli complex Gaussian matrix with unit non-zero variance and specified sparsity
   * __MSE_Compute.m__: Compute the MSE between the ground-truth and its estimate
-
+  * __NMSE_CAL.m/NMSE_CAL2.m__: Compute NMSEs by eq. (40)
 * __DATA/__: Store the numerical results with .mat format
   
 * __MP_Library/__: Scripts for message passing updating
