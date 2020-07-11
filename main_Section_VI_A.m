@@ -4,7 +4,7 @@
 % stored in DATA/VIA_Simulation.mat;
 % To save the running time, here we can set the number of Monte Carlo
 % trials as a small number.
-% To fully recover the plots in Fig. 5, one can change libopt.trails
+% To fully recover the plots in Fig. 5, one can change libopt.trials
 % to 5000;
 clear;
 clc;
@@ -15,11 +15,11 @@ addpath([basePath 'Replica_Library']);
 addpath([basePath 'MP_Library']);
 addpath([basePath 'Model_Generation_Library']);
 
-% libopt contains system parameter that will be passed into message passing functions 
+% libopt contains system parameter that will be passed into message passing functions
 libopt=[];
 
 % change to 5000 for smooth result
-libopt.trails=5000;    % number of monte carlo trials
+libopt.trials=5000;    % number of monte carlo trials
 
 
 
@@ -64,8 +64,8 @@ L2=libopt.L2;
 %system contains the realization of each Monte Carlo trail
 system=[];
 % store MSEs of G and S for each trial
-Final_G=zeros(length(SNRlist),libopt.trails);
-Final_S=zeros(length(SNRlist),libopt.trails);
+Final_G=zeros(length(SNRlist),libopt.trials);
+Final_S=zeros(length(SNRlist),libopt.trials);
 libopt.pathstr=[basePath 'DATA/VIA_Simulation.mat'];
 for t=1:length(SNRlist)
     libopt.tau_N_inverse=SNRlist(t);
@@ -74,7 +74,7 @@ for t=1:length(SNRlist)
     fprintf('tau_N_inverse: %d\n',libopt.tau_N_inverse)
     %noise power
     system.nuw=10^(-libopt.tau_N_inverse/10);
-    for i=1:libopt.trails
+    for i=1:libopt.trials
         
         %verbose print
         if mod(i,1)==0
@@ -127,6 +127,7 @@ for t=1:length(SNRlist)
         
     end
 end
+
 % Average MSEs
 MSE_G_simulation=10*log10(mean(Final_G,2));
 MSE_S_simulation=10*log10(mean(Final_S,2));
