@@ -21,7 +21,7 @@ addpath([basePath 'Model_Generation_Library']);
 libopt=[];
 
 % change to 1500 for smooth result
-libopt.trials=2;    % number of monte carlo trials
+libopt.trials=1500;    % number of monte carlo trials
 
 %.mat file location
 libopt.pathstr=[basePath 'DATA/VIB_Simulation.mat'];
@@ -296,8 +296,8 @@ for l=1:length(Listinput)
     
 end
 % Average NMSEs
-NMSE_H_RB=10*log10(mean(NMSE_H_RB_trial,2));
-NMSE_H_UR=10*log10(mean(NMSE_H_UR_trial,2));
+NMSE_H_RB=10*log10(mean(NMSE_H_RB_trial,2))';
+NMSE_H_UR=10*log10(mean(NMSE_H_UR_trial,2))';
 
 % save the data
 save(libopt.pathstr,'NMSE_H_RB','NMSE_H_UR','NMSE_H_RB_trial','NMSE_H_UR_trial','libopt');
