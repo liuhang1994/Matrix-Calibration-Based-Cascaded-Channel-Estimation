@@ -290,7 +290,7 @@ for l=1:length(Listinput)
             end
             
         end
-        fprintf('Message passing NMSEs: %d-th run %f, %f\n',mm,...
+        fprintf('Message passing NMSEs: %f, %f\n',...
             10*log10(NMSE_H_RB_trial(l,j)),10*log10(NMSE_H_UR_trial(l,j)));
     end
     
