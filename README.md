@@ -44,8 +44,6 @@ The results are NMSE_H_RB and NMSE_H_UR, which is also stored in DATA/VIB_Simula
 
 * __Replica_Library/replica_iteration.m__: Iterative algorithm for asymptotic MSE computation.
 
-
-* Codes for simulations in Section VI-B: comming soon
 ## Referencing
 
 If you in any way use this code for research that results in publications, please cite our original article listed above.
