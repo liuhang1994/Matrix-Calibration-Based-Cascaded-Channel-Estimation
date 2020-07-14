@@ -71,7 +71,7 @@ libopt.beta_k=dUR.^(-pleUR)*10^(-0.1*ref_pl); %beta_k K\times 1
 libopt.lambdaG=0.1;                    % lambda_G defined in eq.(13), sparsity of G
 libopt.lambdaS=0.01;                   % lambda_S defined in eq.(12), sparsity of S
 libopt.tauS=1;                         % tau_S, nonzero variance
-libopt.tauG=2;                         % tau_G, nonzero variance
+libopt.tauG=1;                         % tau_G, nonzero variance
 
 
 libopt.optiter=2000; % I_max, maximum allowable number of algorithm 1
