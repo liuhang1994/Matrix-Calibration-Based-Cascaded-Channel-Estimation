@@ -22,10 +22,11 @@ This script can produce the solid pruple curve in Fig. 5. Specifically, it provi
 
 * __main_Section_VI_B.m__:
 This script produces the data for the purple curves in Fig. 8 (i.e., the proposed algorihtm) for given noise power (tau_N, e.g., -70dB-- -110dB)。
-The results are NMSE_H_RB and NMSE_H_UR, which is also stored in DATA/VIB_Simulation.mat. To save the running time, here we can set the number of Monte Carlo trials as a small number. To fully recover the plots in Fig. 8, one shall change libopt.trials to 1500;
+The results are NMSE_H_RB and NMSE_H_UR, which is also stored in DATA/VIB_Simulation.mat. To save the running time,  can set the number of Monte Carlo trials as a small number. To fully recover the plots in Fig. 8, one shall change libopt.trials to 1500;
 
-* __plot_Fig5.m__: Plot figure as in Fig. 5 based on .mat data files in DATA/.
+* __plot_Fig5.m__: Plot curves as in Fig. 5 based on .mat data files in DATA/.
 
+* __plot_Fig8.m__: Plot curves as in Fig. 8 based on .mat data files in DATA/.
 
 * __Model_Generation_Library/__: Scripts for generate system models
   * __A_GEN.m__: Generate a BS sampling basis with a unfirom sampling grid;
