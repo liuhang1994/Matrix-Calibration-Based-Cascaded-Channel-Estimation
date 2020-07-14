@@ -20,6 +20,10 @@ This script produces the data for the purple dashed curves in Fig. 5 for given n
 * __main_replica.m__:
 This script can produce the solid pruple curve in Fig. 5. Specifically, it provides an iterative algorithm to compute the asymptotic MSEs by computing the fixed-point of eq. (37). The result (MSE_G_ana and MSE_S_ana) are stored in DATA/VIA_Analytical.mat.
 
+* __main_Section_VI_B.m__:
+This script produces the data for the purple curves in Fig. 8 (i.e., the proposed algorihtm) for given noise power (tau_N, e.g., -70dB-- -110dB)。
+The results are NMSE_H_RB and NMSE_H_UR, which is also stored in DATA/VIB_Simulation.mat. To save the running time, here we can set the number of Monte Carlo trials as a small number. To fully recover the plots in Fig. 8, one shall change libopt.trials to 1500;
+
 * __plot_Fig5.m__: Plot figure as in Fig. 5 based on .mat data files in DATA/.
 
 
