@@ -27,6 +27,7 @@ libopt.trials=1500;    % number of monte carlo trials
 libopt.pathstr=[basePath 'DATA/VIB_Simulation.mat'];
 
 % allowable times for independent multiple trials, see below
+% set to 1 for no effect.
 multiple_intial=3;
 %% System Parameter
 libopt.M=60;        % number of antennas at BS
