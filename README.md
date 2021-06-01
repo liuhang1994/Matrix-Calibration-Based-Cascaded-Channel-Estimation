@@ -3,7 +3,7 @@
 This is the simulation code package for the following paper:
 
 Hang Liu, Xiaojun Yuan, and Ying Jun Zhang. "Matrix-calibration-based cascaded channel estimation
-for reconfigurable intelligent surface assisted multiuser MIMO," IEEE Journal on Selected Areas in Communications, 2020, doi: 10.1109/JSAC.2020.3007057. [[Link](https://ieeexplore.ieee.org/abstract/document/9133156)]
+for reconfigurable intelligent surface assisted multiuser MIMO," IEEE Journal on Selected Areas in Communications, 38(11):2621–2636, Nov. 2020. [[Link](https://ieeexplore.ieee.org/abstract/document/9133156)]
 
 The package, written on Matlab 2014b, reproduces the numerical results in the paper.
 
